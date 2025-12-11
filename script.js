@@ -10,12 +10,6 @@ const owner = {
 const $ = q => document.querySelector(q);
 const $$ = q => Array.from(document.querySelectorAll(q));
 
-// THEME toggle
-$('#themeToggle').addEventListener('click', () => {
-  document.documentElement.classList.toggle('alt-theme');
-  // optional: swap variables (left as exercise)
-});
-
 // ABOUT card flip/open
 const aboutCard = document.getElementById('aboutCard');
 if (aboutCard) {
@@ -143,4 +137,5 @@ $$('.field input, .field textarea').forEach(el=>{
 // small accessibility: allow keyboard Enter to submit in message field
 $('#cf_message').addEventListener('keydown', (e)=> {
   if(e.ctrlKey && e.key === 'Enter') form.dispatchEvent(new Event('submit', {cancelable:true}));
+
 });
