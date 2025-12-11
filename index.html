@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Esteban Canchari — Portafolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+<div class="youtube-bg">
+  <iframe 
+    src="https://www.youtube.com/embed/s9xk77X4m5c?autoplay=1&mute=1&controls=0&loop=1&playlist=s9xk77X4m5c&modestbranding=1&rel=0"
+    frameborder="0"
+    allow="autoplay; fullscreen"
+    allowfullscreen
+    id="yt-video">
+  </iframe>
+</div>
+
+
+
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-glow">E</span>
+      <div>
+        <div class="name">Esteban Canchari</div>
+        <div class="title">Desarrollador Web & Creator</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre">Sobre mí</a>
+      <a href="#skills">Habilidades</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <h1>Hola, soy <span class="neon">Esteban Canchari</span></h1>
+        <p class="lead">Desarrollador web en formación. Creo interfaces limpias, soluciones digitales y experiencias interactivas con impacto.</p>
+
+        <div class="cta-row">
+          <button id="downloadVCard" class="btn-primary">Descargar vCard</button>
+          <button id="printCV" class="btn-outline">Imprimir CV</button>
+        </div>
+
+        <ul class="meta">
+          <li>📞 +51 997 714 990</li>
+          <li>✉️ <a href="mailto:70818402@iestpasm.edu.pe">70818402@iestpasm.edu.pe</a></li>
+          <li>🔗 <a href="https://www.linkedin.com/in/esteban-canchari-919b56318/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <div class="hero-right">
+        <div class="profile-card">
+          <img src="imagenes/foto.jpg" alt="Foto Esteban" class="profile-pic">
+          <div class="profile-info">
+            <h3>Esteban Canchari Quintana</h3>
+            <p class="micro">Apasionado por tecnologías web y creación de proyectos.</p>
+            <div class="badges">
+              <span class="badge">HTML</span>
+              <span class="badge">CSS</span>
+              <span class="badge">JavaScript</span>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-grid"></div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="panel">
+    <div class="panel-inner">
+      <h2>Sobre mí</h2>
+
+      <div class="about-grid">
+        <div class="about-card interactive" id="aboutCard">
+          <div class="about-front">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="fondo desarrollo" class="about-img">
+            <h3>Estudiante y Constructor</h3>
+            <p>Me especializo en crear experiencias digitales, interfaces y pequeñas herramientas que resuelven problemas reales.</p>
+            <small>Haz clic para ver más detalles</small>
+          </div>
+
+          <div class="about-back">
+            <h3>Más sobre mí</h3>
+            <p>
+              Tengo experiencia en Frontend (HTML/CSS/JS), creación de juegos y sistemas en Roblox Studio (Lua), 
+              manejo básico de bases de datos (SQL Server / MySQL), y uso de Git/GitHub para control de versiones. 
+              También me intereso por hardware y optimización de sistemas.
+            </p>
+            <ul class="checklist">
+              <li>Proyectos en Roblox Studio (THE FLOOR IS LAVA!!)</li>
+              <li>Desarrollo de páginas responsivas</li>
+              <li>Administración básica de bases de datos</li>
+              <li>Uso de VSCode y flujo Git</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="about-details">
+          <h3>Perfil profesional</h3>
+          <p>
+            Busco seguir creciendo en proyectos reales, con foco en frontend y experiencia de usuario. Me adapto rápido a nuevas herramientas y practico buenas costumbres de desarrollo.
+          </p>
+          <div class="skill-pills">
+            <span>Proactivo</span><span>Colaborativo</span><span>Resolutivo</span><span>Curioso</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="panel dark">
+    <div class="panel-inner">
+      <h2>Habilidades (nivel: avanzado)</h2>
+      <p class="muted">Basado en tu historial y proyectos — estas son las habilidades que mejor representan tu perfil. Todas son editables.</p>
+
+      <div class="skills-grid">
+        <div class="skill">
+          <div class="skill-head"><img src="https://cdn-icons-png.flaticon.com/512/2721/2721293.png" alt=""><h4>Frontend (HTML/CSS/JS)</h4></div>
+          <div class="bar"><div class="bar-fill" data-percent="92"></div></div>
+          <small>Diseño responsive, animaciones, accesibilidad.</small>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt=""><h4>Git & GitHub</h4></div>
+          <div class="bar"><div class="bar-fill" data-percent="88"></div></div>
+          <small>Commits, ramas, GitHub Pages, Pull Requests.</small>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968332.png" alt=""><h4>Roblox Studio (Lua)</h4></div>
+          <div class="bar"><div class="bar-fill" data-percent="85"></div></div>
+          <small>Creación de juegos, LocalScripts, GUIs.</small>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><img src="https://cdn-icons-png.flaticon.com/512/2202/2202112.png" alt=""><h4>SQL & Bases de datos</h4></div>
+          <div class="bar"><div class="bar-fill" data-percent="78"></div></div>
+          <small>Consultas, modelado relacional, SQL Server / MySQL.</small>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><img src="https://cdn-icons-png.flaticon.com/512/806/806101.png" alt=""><h4>Hardware & Optimización</h4></div>
+          <div class="bar"><div class="bar-fill" data-percent="70"></div></div>
+          <small>Conocimientos de PC, GPUs y optimización de rendimiento.</small>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968545.png" alt=""><h4>Aprendizaje rápido</h4></div>
+          <div class="bar"><div class="bar-fill" data-percent="95"></div></div>
+          <small>Capacidad de adoptar nuevas tecnologías.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTS -->
+  <section id="proyectos" class="panel">
+    <div class="panel-inner">
+      <h2>Proyectos destacados</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <h4>Portafolio Personal</h4>
+          <p>Página responsive con animaciones, modo oscuro y despliegue en GitHub Pages.</p>
+        </div>
+
+        <div class="project-card">
+          <h4>Pequeñas utilidades</h4>
+          <p>Snippets y herramientas para validar formularios, contadores y calculadoras.</p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contacto" class="panel contact-panel">
+    <div class="panel-inner">
+      <h2>Contacto</h2>
+
+      <div class="contact-grid">
+        <div class="contact-form-wrap">
+          <form id="contactForm" class="cyber-form">
+            <div class="field">
+              <input id="cf_name" type="text" autocomplete="name" required>
+              <label for="cf_name">Nombre</label>
+              <div class="underline"></div>
+            </div>
+
+            <div class="field">
+              <input id="cf_email" type="email" autocomplete="email" required>
+              <label for="cf_email">Correo</label>
+              <div class="underline"></div>
+            </div>
+
+            <div class="field">
+              <textarea id="cf_message" rows="6" required></textarea>
+              <label for="cf_message">Mensaje</label>
+              <div class="underline"></div>
+            </div>
+
+            <div class="actions">
+              <button type="submit" class="btn-neon">Abrir en Gmail</button>
+              <button type="button" id="saveLocal" class="btn-ghost">Guardar local</button>
+              <button type="button" id="clearLocal" class="btn-ghost">Limpiar</button>
+            </div>
+
+            <p id="formStatus" class="form-status"></p>
+          </form>
+        </div>
+
+        <aside class="contact-aside">
+          <h3>Contacto rápido</h3>
+          <p>Teléfono: <a href="tel:+51997714990">+51 997 714 990</a></p>
+          <p>Email: <a href="mailto:70818402@iestpasm.edu.pe">70818402@iestpasm.edu.pe</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/esteban-canchari-919b56318/" target="_blank">Perfil</a></p>
+
+          <div class="contact-actions">
+            <button id="copyEmail" class="btn-ghost">Copiar email</button>
+            <button id="printPage" class="btn-ghost">Imprimir perfil</button>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2025 • Esteban Canchari Quintana — Lo que puedes imaginar, lo puedes programar</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

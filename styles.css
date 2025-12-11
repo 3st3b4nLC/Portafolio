@@ -1,0 +1,285 @@
+/* RESET BÁSICO */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg1:#07060a; --bg2:#0f0720; --neon1:#7b2fff; --neon2:#0fb6ff;
+  --glass:rgba(255,255,255,0.06); --muted:rgba(255,255,255,0.65);
+  --accent:#8e5cff; --accent2:#4f7dff;
+  --font-main: 'Inter', sans-serif; --font-display: 'Orbitron', sans-serif;
+}
+
+/* VIDEO DE YOUTUBE COMO FONDO */
+.youtube-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -3;
+}
+
+.youtube-bg iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: brightness(0.4) saturate(1.2) blur(3px);
+    pointer-events: none;
+}
+
+/* CAPA OSCURA ENCIMA DEL VIDEO */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.15),
+        rgba(20,0,40,0.25),
+        rgba(0,0,0,0.15)
+    );
+    z-index: -2;
+}
+
+
+/* FONDO CYBERPUNK (FALLBACK POR SI NO CARGA EL VIDEO) */
+body{
+  font-family:var(--font-main);
+
+  /* El video ya es el fondo principal */
+  background: transparent !important;
+
+  /* fallback (solo se ve si falla el video) */
+  background:
+    radial-gradient( circle at 10% 10%, rgba(127,0,255,0.08), transparent 10%),
+    linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+    url("https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80") center/cover fixed;
+
+  color:white;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+}
+
+/* TOPBAR */
+.topbar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 28px;background:linear-gradient(90deg,rgba(0,0,0,0.3),rgba(0,0,0,0.1));
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.brand{display:flex;gap:12px;align-items:center}
+.logo-glow{
+  font-family:var(--font-display);width:52px;height:52px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+  background:linear-gradient(135deg,var(--neon1),var(--neon2));
+  color:#030303;box-shadow:0 6px 30px rgba(123,47,255,0.25),0 0 8px rgba(15,182,255,0.08);
+}
+.name{font-weight:700}
+.title{font-size:12px;color:var(--muted);margin-top:2px}
+.nav a{color:var(--muted);text-decoration:none;margin:0 10px;font-weight:600}
+.nav .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;color:var(--muted);cursor:pointer}
+
+/* HERO */
+.hero{padding:60px 20px;position:relative;overflow:visible}
+.hero-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;max-width:1200px;margin:0 auto}
+.hero-left{flex:1;min-width:320px}
+.hero-right{width:340px}
+h1{font-family:var(--font-display);font-size:36px;line-height:1;color:linear-gradient(90deg,#fff,#ddd)}
+.neon{color:var(--neon1);text-shadow:0 0 12px rgba(123,47,255,0.6)}
+.lead{color:var(--muted);margin:18px 0 20px}
+
+/* CTA */
+.cta-row{display:flex;gap:12px;margin-top:10px}
+.btn-primary{background:linear-gradient(90deg,var(--accent2),var(--accent));padding:12px 16px;border-radius:12px;border:none;color:#fff;font-weight:700;cursor:pointer;box-shadow:0 10px 30px rgba(79,125,255,0.12)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--muted);cursor:pointer}
+
+/* META */
+.meta{list-style:none;margin-top:16px;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap}
+.meta a{color:var(--muted);text-decoration:none;border-bottom:1px dashed rgba(255,255,255,0.03)}
+
+/* PROFILE CARD */
+.profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:18px;border-radius:14px;display:flex;gap:12px;align-items:center;box-shadow:0 8px 30px rgba(0,0,0,0.5)}
+.profile-pic{width:90px;height:90px;border-radius:12px;object-fit:cover;border:3px solid rgba(255,255,255,0.06)}
+.profile-info h3{margin-bottom:6px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.badge{background:rgba(255,255,255,0.04);padding:6px 8px;border-radius:8px;font-size:12px;color:var(--muted)}
+
+/* BG GRID */
+.bg-grid{position:absolute;inset:0;opacity:0.06;background-image:linear-gradient(0deg,rgba(255,255,255,0.02) 1px, transparent 1px);background-size:80px 80px;pointer-events:none;transform:translateZ(0)}
+
+/* PANELS */
+.panel{padding:48px 20px}
+.panel-inner{max-width:1100px;margin:0 auto}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start}
+.about-card{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+.about-front, .about-back{padding:22px;color:#fff}
+.about-img{width:100%;height:180px;object-fit:cover}
+.about-front h3{margin:12px 0;font-size:20px}
+.about-back{background:linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.95));transform:translateY(100%);position:absolute;inset:0;padding:30px;transition:0.45s}
+.about-card.open .about-back{transform:translateY(0)}
+.about-details{background:rgba(255,255,255,0.02);padding:20px;border-radius:12px}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.skill{background:rgba(255,255,255,0.03);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.45)}
+.skill-head{display:flex;gap:12px;align-items:center}
+.skill-head img{width:36px;height:36px;object-fit:contain}
+.bar{height:12px;background:rgba(255,255,255,0.06);border-radius:8px;margin-top:10px;overflow:hidden}
+.bar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:8px;transition:width 1s ease}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.project-card{background:rgba(255,255,255,0.03);padding:16px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.45)}
+.project-card .link{display:inline-block;margin-top:12px;color:var(--accent2)}
+
+/* CONTACT GRID */
+.contact-grid{display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start}
+.contact-aside{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px}
+.contact-actions{display:flex;gap:10px;margin-top:12px}
+
+/* ==== FORMULARIO ULTRA CYBERPUNK ==== */
+
+.cyber-form-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.cyber-form {
+    width: 100%;
+    max-width: 480px;
+    padding: 35px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 0 25px rgba(123,47,255,0.4),
+        0 0 50px rgba(15,182,255,0.3),
+        inset 0 0 20px rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.15);
+    position: relative;
+
+    animation: appear 0.8s ease forwards;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Campos */
+.cyber-form .field {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.cyber-form input,
+.cyber-form textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.06);
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.cyber-form textarea {
+    height: 130px;
+    resize: none;
+}
+
+/* Label animado */
+.cyber-form label {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    pointer-events: none;
+    color: #bcbcbc;
+    transition: 0.25s;
+}
+
+.cyber-form input:focus + label,
+.cyber-form input:not(:placeholder-shown) + label,
+.cyber-form textarea:focus + label,
+.cyber-form textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: var(--neon2);
+}
+
+/* Línea neon al escribir */
+.field .underline {
+    position: absolute;
+    height: 3px;
+    left: 12px;
+    right: 12px;
+    bottom: 6px;
+    background: linear-gradient(90deg,var(--neon1),var(--neon2));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.25s;
+}
+
+.field input:focus ~ .underline,
+.field textarea:focus ~ .underline {
+    transform: scaleX(1);
+}
+
+/* BOTÓN CYBER-HOLOGRAMA */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    font-size: 17px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+
+    color: #000;
+
+    background: linear-gradient(90deg,var(--neon1),var(--neon2));
+    border-radius: 12px;
+    
+    box-shadow:
+        0 0 15px rgba(123,47,255,0.6),
+        0 0 35px rgba(15,182,255,0.4);
+
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.2);
+}
+/* ACTIONS */
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn-neon{background:linear-gradient(90deg,var(--neon1),var(--neon2));border:none;padding:12px 14px;border-radius:10px;color:#030303;font-weight:700;cursor:pointer;box-shadow:0 10px 30px rgba(123,47,255,0.12)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:var(--muted);cursor:pointer}
+
+/* FORM STATUS */
+.form-status{margin-top:12px;color:var(--muted)}
+
+/* FOOTER */
+.site-footer{padding:20px;text-align:center;color:var(--muted);margin-top:40px;border-top:1px solid rgba(255,255,255,0.03)}
+
+/* RESPONSIVE */
+@media (max-width:980px){
+  .hero-inner{flex-direction:column}
+  .about-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+
+/* small niceties */
+a{color:inherit}
