@@ -30,6 +30,7 @@
     pointer-events: none;
 }
 
+
 /* CAPA OSCURA ENCIMA DEL VIDEO */
 body::before {
     content: "";
@@ -282,4 +283,5 @@ h1{font-family:var(--font-display);font-size:36px;line-height:1;color:linear-gra
 }
 
 /* small niceties */
+
 a{color:inherit}
