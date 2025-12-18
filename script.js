@@ -10,6 +10,8 @@ const owner = {
 const $ = q => document.querySelector(q);
 const $$ = q => Array.from(document.querySelectorAll(q));
 
+
+
 // ABOUT card flip/open
 const aboutCard = document.getElementById('aboutCard');
 if (aboutCard) {
@@ -30,27 +32,34 @@ window.addEventListener('scroll', () => {
 });
 
 // PROJECT: print CV
-$('#printCV').addEventListener('click', ()=> window.print());
+document.getElementById("printCV").addEventListener("click", () => {
+    window.print();
+});
+
 
 // vCard download
-$('#downloadVCard').addEventListener('click', ()=>{
-  const vcard = [
-    'BEGIN:VCARD',
-    'VERSION:3.0',
-    `FN:${owner.name}`,
-    `TEL;TYPE=cell:${owner.phone}`,
-    `EMAIL;TYPE=internet:${owner.email}`,
-    `URL:${owner.linkedin}`,
-    'END:VCARD'
-  ].join('\n');
+document.getElementById("downloadVCard").addEventListener("click", () => {
+    const vcard = `
+BEGIN:VCARD
+VERSION:3.0
+FN:Esteban Canchari Quintana
+TEL:+51997714990
+EMAIL:70818402@iestpasm.edu.pe
+URL:https://www.linkedin.com/in/esteban-canchari-919b56318/
+END:VCARD
+    `.trim();
 
-  const blob = new Blob([vcard], {type:'text/vcard'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = 'esteban_canchari.vcf';
-  document.body.appendChild(a); a.click(); a.remove();
-  URL.revokeObjectURL(url);
+    const blob = new Blob([vcard], { type: "text/vcard" });
+    const url = URL.createObjectURL(blob);
+    
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Esteban_Canchari.vcf";
+    a.click();
+
+    URL.revokeObjectURL(url);
 });
+
 
 // CONTACT FORM behavior
 const form = $('#contactForm');
@@ -137,5 +146,6 @@ $$('.field input, .field textarea').forEach(el=>{
 // small accessibility: allow keyboard Enter to submit in message field
 $('#cf_message').addEventListener('keydown', (e)=> {
   if(e.ctrlKey && e.key === 'Enter') form.dispatchEvent(new Event('submit', {cancelable:true}));
-
 });
+
+
